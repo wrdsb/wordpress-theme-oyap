@@ -43,9 +43,9 @@
             		wp_loginout();
             	} 
             	else 
-            	{ */ ?>
+            	{ ?>
             		<a href="<?php echo site_url(); echo '/wp-login.php';?>">Log into <?php echo get_bloginfo('name'); ?></a>
-            	<?php /*}? */ ?> 
+            	<?php }? */ ?> 
               <br />&copy; OYAP <?php echo date("Y");?></p>
           </div>
 
