@@ -1,0 +1,395 @@
+/*
+ Theme Name:   WRDSB Theme OYAP Variant
+ Theme URI:    https://github.com/wrdsb/wordpress-theme-oyap/
+ Description:  Child theme for OYAP, based on the WRDSB responsive theme.
+ Author:       Suzanne Carter
+ Author URI:   http://www.wrdsb.ca/
+ Template:     wordpress-theme
+ Version:      0.0.1
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         three-columns, responsive-layout, accessibility-ready
+ Text Domain:  wrdsb-stswr
+ GitHub Theme URI: wrdsb/wordpress-theme-oyap
+ GitHub Branch: master
+*/
+
+#ninja_forms_manage_subs {
+    margin: 45px 50px 75px 25px;
+}
+
+#ninja_forms_manage_subs th, #ninja_forms_manage_subs td {
+    padding: 5px !important;
+    font-size: .9em;
+}
+
+.ninja-forms-cont h4 {
+    margin-top: 25px;
+}
+
+:target {
+    padding-top: 50px !important;
+    -webkit-animation: target-fade 3s 1;
+    -moz-animation: target-fade 3s 1;
+}
+
+@-webkit-keyframes target-fade {
+    0% { background-color: rgba(0,0,0,.1); }
+    100% { background-color: rgba(0,0,0,0); }
+}
+@-moz-keyframes target-fade {
+    0% { background-color: rgba(0,0,0,.1); }
+    100% { background-color: rgba(0,0,0,0); }
+}
+
+#contact:target {
+    padding-top: 0 !important;
+    -webkit-animation: target-fade 0s 0;
+    -moz-animation: target-fade 0s 0;
+}
+
+#loginbar { /* contains log in/out, Staff Website and sometimes School Handbook links */
+ background-color: #ffa700 !important;
+    border-top: 3px solid #b37500;
+    width:100%;
+}
+
+#loginbar p.copyright {
+    color: #333;
+    font-family: 'Open Sans', sans-serif !important;
+        -webkit-font-smoothing: antialiased;
+        font-weight: 400;
+}
+
+#loginbar a {
+    color: #333;
+    font-weight: bold;
+}
+
+/* Sidebar Buttons */
+.button, .button_login {
+    font-family: 'Open Sans', sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+  line-height: 18px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border-top-left-radius: 10px 10px;
+  border-top-right-radius: 10px 10px;
+  border-bottom-right-radius: 10px 10px;
+  border-bottom-left-radius: 10px 10px;
+  padding: 10px;
+  /*height: 55px;*/
+  border: 1px solid #ECE9D8;
+}
+
+.button a, .button_login a {
+  font-size: 18px !important;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.button img, .button_login img {
+  float: left;
+  padding-right: 5px;
+}
+
+.button:hover {
+  border: 1px solid #8b7a5f;
+  background-color: #ffc;
+}
+
+.button_login:hover {
+  border: 1px solid #4c7686;
+  background-color: #bfe8f9;
+}
+
+.button a:hover, .button_login a:hover, .sub-menu-heading a {
+  background-color: transparent !important;
+}
+
+.sub-menu-heading a:hover,  .sub-menu-heading a:focus {
+  color: #fff;
+}
+
+.my-navbar {
+    background-color: #333;
+    border-radius: 0px;
+    border-top: 6px solid #ffa700;
+    border-left: 0px;
+    border-right: 0px;
+    border-bottom: 0px;
+    margin-bottom: 10px;
+}
+
+.my-navbar, .my-navbar a {
+    font-family: 'Open Sans', sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+}
+
+.nav >li.active, .nav >li.current-page-ancestor, .nav >li.current_page_ancestor, .nav >li.current-menu-item, .nav >li.current_page_item {
+    background-color: #e69600;
+}
+
+.nav >li > a:hover, .nav >li > a:focus {
+    background-color: #cc8600;
+}
+
+a {
+    color: #b37500;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px); 
+}
+
+div.register {
+	background-color: #ffa700;
+}
+
+div.register:hover {
+	-webkit-box-shadow: -5px -5px -20px 7px rgba(122,193,67,1); 
+	-moz-box-shadow: -5px -5px -20px 7px rgba(122,193,67,1); 
+	box-shadow: -5px -5px -20px 7px rgba(122,193,67,1);
+}
+
+a:hover, a:focus {
+    color: #333;
+    text-decoration: underline;
+    background-color: #ffa700;
+}
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding-bottom: 20px;
+    padding-top: 12px;
+    margin-top: 10px;
+    border-top: 6px solid #ffa700;
+}
+
+.footer a {
+    color: #ffdd9d;
+}
+
+.footer a:hover, .footer a:focus {
+    color: #000;
+    text-decoration: underline;
+    background-color: #ccc;
+}
+
+.footer h4 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+p.copyright, h6.copyright {
+    color: #e69600;
+}
+
+.sub-menu-heading {
+    background-color: #666;
+}
+
+.sub-menu-items {
+    background-color: #fff8eb;
+}
+
+.sub-menu-items a:hover, .sub-menu-items a:focus {
+    color: #333;
+    text-decoration: underline;
+    background-color: #fff8eb;
+}
+
+/* children in sub-nav */
+.nav_current_page_children_container {
+    background-color: #fffdf9; /*primary-faint*/
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+}
+
+body, .sub-menu-items li a, .widget-area li a {
+    font-family: 'Open Sans', sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+}
+
+ .sub-menu-items li a, .widget-area li a {
+    font-size: 15px;
+}
+
+.sub-menu-items li {
+    border-bottom: 1px dashed #ffa700;
+}
+
+.sub-menu-items li:last-child {
+    border-bottom: 0;
+}
+
+p, li {
+    font-family: 'Vollkorn', serif !important;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 160%;
+}
+
+p.intro {
+    font-family: 'Open Sans', sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 700;
+    font-size: 20px;
+    padding: 15px 0;
+}
+
+.footer p, p.readmore, p.categories, p.postdate, .next, .page-numbers, .prev, .editpost, .footer li {
+    font-family: 'Open Sans', sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+}
+
+.next, .page-numbers, .prev {
+    font-size: 13px;
+}
+
+.footer li {
+    font-size: 13px;
+}
+
+p.readmore {
+    font-size: 14px !important;
+}
+
+.editpost {
+    padding: 0 5px;
+    width: 50px;
+    border: 1px solid #FFA700;
+    background-color: #fff8eb;
+    text-transform: uppercase;
+    text-align: center;
+    /* rounded corners */
+    -webkit-border-radius: 5px 5px 5px 5px;
+    -moz-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    /* shadow */
+    -webkit-box-shadow: #eee 4px 4px 4px;
+    -moz-box-shadow: #eee 4px 4px 4px;
+    box-shadow: #eee 4px 4px 4px;
+}
+
+.editpost:hover {
+    border: 1px solid #ffff8eb;
+    background-color: #ffa700;
+    /* shadow */
+    -webkit-box-shadow: #eee -4px -4px 4px;
+    -moz-box-shadow: #eee -4px -4px 4px;
+    box-shadow: #eee -4px -4px 4px;
+}
+
+.editpost a {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.editpost a:hover {
+    background-color: #ffa700;
+}
+
+/** TABLE COLOURS **/
+
+thead th {
+   background-color: #eee;
+   border-bottom: 2px solid #ffa700 !important;
+}
+
+tr:hover {
+    background-color: #fff8eb !important;
+}
+
+td:hover {
+    background-color: #ffdd9d !important;
+}
+
+/** LOGO **/
+
+#logo a {
+    display: inline-block;
+    width: 100%;
+    height: 110px;
+    background: url(stswr_icon.gif) no-repeat;
+    background-size: 110px 110px;
+    padding-left: 120px;
+    text-decoration: none;
+    color: #000;
+}
+
+#logo a #sitename {
+    font-family: 'Open Sans', sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 700;
+    color: #333;
+    font-size: 22px;
+}
+
+#logo a #sitedescription {
+    font-family: 'Open Sans', sans-serif !important;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    color: #333;
+    font-size: 18px;
+}
+
+#logo a #sitename, #logo a #sitedescription {
+    color: #333 !important;
+}
+
+#navbar-header {
+    background:url(stswr_icon.gif) no-repeat;
+    background-size: 50px 55px;
+    position:relative;
+}
+
+#navbar-header a:hover {
+    background-color: transparent;
+    color: #fff;
+}
+
+.pf-content .printfriendly a:hover {
+    background-color: #fff;
+}
+
+/*** ALERTS ***/
+
+.alerts {
+    width: 1140px;
+    border: 10px dashed #900;
+    padding: 25px;
+    margin: 25px auto;
+    background-color: #ffffe6;
+}
+
+.alerts h1 {
+    font-weight: 700;
+    text-align: center;
+}
+
+/* .alerts p {} */
+
+/* form elements in the footer */
+
+.footer input[type=text] {
+    background-color: #fff !important;
+    color: #666 !important;
+}
+
+.footer input[type=submit] {
+    color: #666 !important;
+}
