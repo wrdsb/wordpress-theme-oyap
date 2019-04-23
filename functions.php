@@ -36,3 +36,42 @@ function custom_pdf_name( $name, $sub_id ) {
      return $name; 
   } 
 add_filter( 'ninja_forms_submission_pdf_name', 'custom_pdf_name', 20, 2 );
+
+function my_login_logo() {
+?>
+<style type="text/css">
+body.login div#login h1 a 
+{
+background-image: url(https://oyap.wrdsb.ca/wp-content/uploads/2019/04/oyap_icon.gif);
+background-size: 357px 160px;
+padding-bottom: 0;
+height: 160px;
+width: 357px;
+}
+
+p#nav::after {
+content: " | Need access? <a href="mailto:david_pope@wrdsb.ca">Email David Pope, WRDSB</a> ";
+
+}
+</style>
+} <?php 
+} add_action ('login_enqueue_scripts','my_login_logo');
+
+function my_login_logo_url() {
+    return home_url();
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+function my_login_logo_url_title() {
+    return 'WRDSB OYAP Advisory Committee';
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
+
+function my_login_message($message) {
+    if (empty($message)) {
+    return '<p><strong>Need access?</strong> Email <a href="mailto:david_pope@wrdsb.ca">David Pope</a> for an account.</p>';}
+    else {
+        return $message;
+    }
+}
+add_filter ('login_message', 'my_login_message');

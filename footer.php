@@ -46,7 +46,7 @@
             	{ ?>
             		<a href="<?php echo site_url(); echo '/wp-login.php';?>">Log into <?php echo get_bloginfo('name'); ?></a>
             	<?php }? */ ?> 
-              <br />&copy; OYAP <?php echo date("Y");?></p>
+              &copy; WRDSB OYAP Advisory Committee <?php echo date("Y");?></p>
           </div>
 
     <?php wp_footer(); ?>
