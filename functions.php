@@ -75,3 +75,15 @@ function my_login_message($message) {
     }
 }
 add_filter ('login_message', 'my_login_message');
+
+add_action('wp_head', 'my_ga_tracking');
+function my_ga_tracking() { ?>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138927834-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-138927834-1');
+        </script>
+<? }
