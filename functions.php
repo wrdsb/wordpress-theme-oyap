@@ -87,3 +87,21 @@ function my_ga_tracking() { ?>
             gtag('config', 'UA-138927834-1');
         </script>
 <? }
+
+//Remove dashboard widgets
+function remove_dashboard_meta() {
+        remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
+        remove_meta_box( 'dashboard_plugins', 'dashboard', 'normal' );
+        remove_meta_box( 'dashboard_primary', 'dashboard', 'normal' );
+        remove_meta_box( 'dashboard_secondary', 'dashboard', 'normal' );
+        remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
+        remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'side' );
+        remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' );
+        remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );
+        remove_meta_box( 'dashboard_activity', 'dashboard', 'normal');
+        remove_meta_box( 'wpe_dify_news_feed', 'dashboard', 'normal');
+        remove_meta_box( 'jetpack_summary_widget', 'dashboard', 'normal');
+    if (! current_user_can ('manage_options')) {
+    }
+}
+add_action ('admin_init', 'remove_dashboard_meta');
