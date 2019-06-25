@@ -144,11 +144,11 @@ function show_extra_profile_fields( $user ) { ?>
             <th><label for="industry">Industry</label></th>
             <td>
                 <select name="industry" id="industry" >
-                    <option value="Service Sector" <?php selected( 'Service Sector', get_the_author_meta( 'industry', $user->ID ) ); ?>>Service Sector</option>
-                    <option value="Transportation Sector" <?php selected( 'Transportation Sector', get_the_author_meta( 'industry', $user->ID ) ); ?>>Transportation Sector</option>
-                    <option value="Industrial Sector" <?php selected( 'Industrial Sector', get_the_author_meta( 'industry', $user->ID ) ); ?>>Industrial Sector</option>
                     <option value="Construction Sector" <?php selected( 'Construction Sector', get_the_author_meta( 'industry', $user->ID ) ); ?>>Construction Sector</option>
-                    <option value="Education Sector" <?php selected( 'Education Sector', get_the_author_meta( 'industry', $user->ID ) ); ?>>Education Sector</option>
+                    <option value="Industrial Sector" <?php selected( 'Industrial Sector', get_the_author_meta( 'industry', $user->ID ) ); ?>>Industrial Sector</option>
+                    <option value="Motive Sector" <?php selected( 'Motive Sector', get_the_author_meta( 'industry', $user->ID ) ); ?>>Motive Sector</option>
+                   <option value="Service Sector" <?php selected( 'Service Sector', get_the_author_meta( 'industry', $user->ID ) ); ?>>Service Sector</option>
+                     <option value="Education Sector" <?php selected( 'Education Sector', get_the_author_meta( 'industry', $user->ID ) ); ?>>Education Sector</option>
                     <option value="Public Service / Government" <?php selected( 'Public Service / Government', get_the_author_meta( 'industry', $user->ID ) ); ?>>Public Service / Government</option>
 
                 </select>
