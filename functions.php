@@ -105,3 +105,66 @@ function remove_dashboard_meta() {
     }
 }
 add_action ('admin_init', 'remove_dashboard_meta');
+
+// Add more fields to User Profile
+if (! function_exists('contact_methods')) :
+  function contact_methods ($contact_methods) {
+      $contact_methods['phone']    = __('Phone');
+      $contact_methods['linkedin'] = __('LinkedIn');
+
+      return $contact_methods;
+  }
+  add_filter ('user_contactmethods', 'contact_methods', 10, 1);
+endif;
+
+// Add industries checklist to User Profile
+
+add_action( 'show_user_profile', 'show_extra_profile_fields' );
+add_action( 'edit_user_profile', 'show_extra_profile_fields' );
+
+function show_extra_profile_fields( $user ) { ?>
+    <h3>Company Details</h3>
+    <table class="form-table">
+        <tr>
+            <th><label for="company">Company name</label></th>
+            <td><input type="text" value="<?php echo esc_attr(get_user_meta($user->ID, 'company', true)); ?>" name="company" id="company" size="50"/></td>
+            </td>
+        </tr>
+        <tr>
+            <th><label for="position">Your position / title</label></th>
+            <td><input type="text" value="<?php echo esc_attr(get_user_meta($user->ID, 'position', true)); ?>" name="position" id="position" size="50"/></td>
+            </td>
+        </tr>
+        <tr>
+            <th><label for="companyURL">Your company's website</label></th>
+            <td><input type="text" value="<?php echo esc_attr(get_user_meta($user->ID, 'companyURL', true)); ?>" name="companyURL" id="companyURL" size="50"/></td>
+            </td>
+        </tr>
+        <tr>
+            <th><label for="industry">Industry</label></th>
+            <td>
+                <select name="industry" id="industry" >
+                    <option value="Construction Sector" <?php selected( 'Construction Sector', get_the_author_meta( 'industry', $user->ID ) ); ?>>Construction Sector</option>
+                    <option value="Industrial Sector" <?php selected( 'Industrial Sector', get_the_author_meta( 'industry', $user->ID ) ); ?>>Industrial Sector</option>
+                    <option value="Motive Sector" <?php selected( 'Motive Sector', get_the_author_meta( 'industry', $user->ID ) ); ?>>Motive Sector</option>
+                   <option value="Service Sector" <?php selected( 'Service Sector', get_the_author_meta( 'industry', $user->ID ) ); ?>>Service Sector</option>
+                     <option value="Education Sector" <?php selected( 'Education Sector', get_the_author_meta( 'industry', $user->ID ) ); ?>>Education Sector</option>
+                    <option value="Public Service / Government" <?php selected( 'Public Service / Government', get_the_author_meta( 'industry', $user->ID ) ); ?>>Public Service / Government</option>
+
+                </select>
+            </td>
+        </tr>
+    </table>
+<?php }
+
+add_action( 'personal_options_update', 'save_extra_profile_fields' );
+add_action( 'edit_user_profile_update', 'save_extra_profile_fields' );
+
+function save_extra_profile_fields( $user_id ) {
+    if ( !current_user_can( 'edit_user', $user_id ) )
+        return false;
+    update_usermeta( $user_id, 'industry', $_POST['industry'] );
+    update_usermeta( $user_id, 'company', $_POST['company'] );
+    update_usermeta( $user_id, 'position', $_POST['position'] );
+    update_usermeta( $user_id, 'companyURL', $_POST['companyURL'] );
+}
