@@ -63,13 +63,13 @@ function my_login_logo_url() {
 add_filter( 'login_headerurl', 'my_login_logo_url' );
 
 function my_login_logo_url_title() {
-    return 'WRDSB OYAP Advisory Committee';
+    return 'WRDSB | OYAP Advisory Committee';
 }
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 
 function my_login_message($message) {
     if (empty($message)) {
-    return '<p><strong>Need access?</strong> Email <a href="mailto:david_pope@wrdsb.ca">David Pope</a> for an account.</p>';}
+    return '<h1 style="line-height: 130%;margin-bottom: 15px;">WRDSB | OYAP<br />Advisory Committee</h1><p><strong>Need access?</strong> Email <a href="mailto:david_pope@wrdsb.ca">David Pope</a> for an account.</p>';}
     else {
         return $message;
     }
