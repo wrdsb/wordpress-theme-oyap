@@ -1,3 +1,7 @@
+## 0.2.0
++ reworked profile fields and display
++ added new profile fields
+
 ## 0.1.0
 + add new fields to user profile
 + create Advisory Committee (AC) Members page

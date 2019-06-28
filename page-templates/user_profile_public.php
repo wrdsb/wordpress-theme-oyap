@@ -267,16 +267,44 @@ function json_sort(&$json, $ascending = true) {
               unset($user_linkedin);
             }
 
+            if ($user->twitter !== '') {
+              $user_twitter = '<li><a href="' . $user->twitter . '" target="_blank" rel="noopener">' . $user->first_name . ' on Twitter</a></li>';
+            } else {
+              unset($user_twitter);
+            }
+
+            if ($user->instagram !== '') {
+              $user_instagram = '<li><a href="' . $user->instagram . '" target="_blank" rel="noopener">' . $user->first_name . ' on Instagram</a></li>';
+            } else {
+              unset($user_instagram);
+            }
+
+            if ($user->facebook !== '') {
+              $user_facebook = '<li><a href="' . $user->facebook . '" target="_blank" rel="noopener">' . $user->first_name . ' on Facebook</a></li>';
+            } else {
+              unset($user_facebook);
+            }
+
             if ($user_phone !== '') {
               $user_phone_display = '<li>' . $user_phone . '</li>';
             } else {
               unset($user_phone_display);
             }
 
+            // is there a biography?
             if ($user_description === '') {
               $nothingtoseehere = ' class="hide"';
             } else {
               unset($nothingtoseehere);
+            }
+
+            // What is the website?
+            if ($user_companyURL != '') {
+              $user_company_display = '<a href="'. $user_companyURL . '" target="_blank" rel="noopener noreferrer">'.$user_company. '</a>';
+             }
+            else if ($user_companyURL === '') {
+              unset($user_companyURL);
+              $user_company_display = $user->company;
             }
 
             ?>
@@ -284,7 +312,7 @@ function json_sort(&$json, $ascending = true) {
               <div class="oyap_keydeets"><img src="<?php echo $user_headshot; ?>" alt="<?php echo $member_alt_name; ?>" />
                 <div>
                   <h2><?php echo $member_alt_name; ?></h2>
-                  <a href="<?php echo $user->companyURL; ?>"><?php echo $user->company; ?></a><br />
+                  <?php echo $user_company_display; ?><br />
                   <?php echo get_user_option('position', $user->ID); ?></p>
                 </div>
               </div>
@@ -296,6 +324,9 @@ function json_sort(&$json, $ascending = true) {
                   <li><a href="mailto:<?php echo $user->user_email; ?>"><?php echo $user->user_email; ?></a></li>
                   <?php echo $user_linkedin; ?>
                   <?php echo $user_phone_display; ?>
+                  <?php echo $user_twitter; ?>
+                  <?php echo $user_instagram; ?>
+                  <?php echo $user_facebook; ?>
                 </ul>
               </div>
 

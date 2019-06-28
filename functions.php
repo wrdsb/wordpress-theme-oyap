@@ -111,11 +111,22 @@ if (! function_exists('contact_methods')) :
   function contact_methods ($contact_methods) {
       $contact_methods['phone']    = __('Phone');
       $contact_methods['linkedin'] = __('LinkedIn');
+      $contact_methods['twitter']    = __('Twitter');
+      $contact_methods['instagram'] = __('Instagram');
+      $contact_methods['facebook'] = __('Facebook');
 
       return $contact_methods;
   }
   add_filter ('user_contactmethods', 'contact_methods', 10, 1);
 endif;
+
+// remove default WordPress website field (hide from display, it's hard-coded)
+function remove_website_row_wpse_94963_css()
+{
+    echo '<style>tr.user-url-wrap{ display: none; }</style>';
+}
+add_action( 'admin_head-user-edit.php', 'remove_website_row_wpse_94963_css' );
+add_action( 'admin_head-profile.php',   'remove_website_row_wpse_94963_css' );
 
 // Add industries checklist to User Profile
 
